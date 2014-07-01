@@ -11,4 +11,5 @@ urlpatterns = patterns('',
 
     url(r'^admin/', include(admin.site.urls)),
 	url(r'^tracks/(?P<title>[\w\-]+)', 'tracks.views.track_view_json', name='track_view_json'),
+	url(r'^signup/',"userprofiles.views.signup",name="signup")
 )
