@@ -27,4 +27,6 @@ class Track(models.Model):
 
 	#todo en django es un objeto	
 	player.allow_tags = True
+	#volver ordenable un campo
+	player.admin_order_field = 'track_file'
 
