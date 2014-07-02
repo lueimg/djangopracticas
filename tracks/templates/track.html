@@ -5,6 +5,21 @@
 	<title>Track {{titulo}}</title>
 </head>
 <body>
+	<nav>
+		<ul>
+			<li>
+				<a href="/tracks/Happy">Inicio</a>
+			</li>
+			{% for track in tracks %}
+
+			<li>
+				<a href="{{track.get_absolute_url}}">{{track.title}}</a>
+				{% if track == selected_track %} <---- {% endif%}
+			</li>
+			
+			{% endfor %}
+		</ul>
+	</nav>
 	<section>
 		<p>Title:{{track.title}}</p>
 		<p>Order:{{track.order}}</p>

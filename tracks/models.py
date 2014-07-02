@@ -25,6 +25,11 @@ class Track(models.Model):
 	def __unicode__(self):
 		return self.title
 
+	# FUNCION STANDART SOBRE ESCRITA , TAMBIEN APARECE EN EL ADMIN
+	# debugin pip install Werkzeug en browser
+	def get_absolute_url(self):
+		return '/tracks/' + self.title
+
 	#todo en django es un objeto	
 	player.allow_tags = True
 	#volver ordenable un campo
