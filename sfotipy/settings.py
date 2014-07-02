@@ -87,8 +87,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 #backends
-
-AUTHENTICATION_BACKENDS = (
-    'userprofiles.backends.EmailBackend',)
+# modifica la funcion authentication en general
+# AUTHENTICATION_BACKENDS = (
+#     'userprofiles.backends.EmailBackend',)
 
 
