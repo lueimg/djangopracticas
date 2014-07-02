@@ -14,8 +14,12 @@ class TrackAdmin(admin.ModelAdmin):
 	#AGREGA UN BUSCADOR A LA CLASE
 	search_fields = ('title','artist__firt_name','artist__last_name')
 
-	
 	list_editable = ('title','album')
+
+	raw_id_fields = ('artist',)
+
+
+
 
 	def es_pharrel(self,obj):
 		return obj.id == 1

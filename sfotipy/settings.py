@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'albums',
     'artists',
     "userprofiles",
+    'mockups',
 )
 
 MIDDLEWARE_CLASSES = (
