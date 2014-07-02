@@ -6,7 +6,7 @@ from .models import Track
 
 class TrackAdmin(admin.ModelAdmin):
 	#aumenta columnas en el admin de este contenido
-	list_display = ('title','artist','order', 'track_file','album','player')
+	list_display = ('title','artist','order', 'album','player')
 	
 	#para filtar en el admin por tipo de contenido
 	list_filter = ('artist','album')

@@ -13,9 +13,18 @@ class Track(models.Model):
 	artist = models.ForeignKey(Artist)
 
 	def player(self):
-		return self.track_file.url
-
+		# return self.track_file.url
+		return """
+		<audio controls>
+			<source src= "%s" type="audio/mpeg">
+			your browser does not support the audio tag.`
+			</source>
+		</audio>
+		""" % self.track_file.url
 
 	def __unicode__(self):
 		return self.title
+
+	#todo en django es un objeto	
+	player.allow_tags = True
 
