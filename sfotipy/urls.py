@@ -2,7 +2,7 @@ from django.conf.urls import patterns, include, url
 
 from django.contrib import admin
 admin.autodiscover()
-
+from django.conf import settings
 
 urlpatterns = patterns('',
     # Examples:
@@ -13,4 +13,8 @@ urlpatterns = patterns('',
 	url(r'^tracks/(?P<title>[\w\-]+)', 'tracks.views.track_view_json', name='track_view_json'),
 	url(r'^signup/',"userprofiles.views.signup",name="signup"),
 	url(r'^signin/',"userprofiles.views.signin",name="signin"),
+)
+
+urlpatterns += patterns('',
+	url(r'^media/(?P<path>.*)$','django.views.static.serve',{'document_root':settings.MEDIA_ROOT}),
 )
