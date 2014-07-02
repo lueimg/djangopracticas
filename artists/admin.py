@@ -24,6 +24,8 @@ class ArtistAdmin(admin.ModelAdmin):
 
 	inlines = [AlbumInline,TrackInline,] #clases de modelos a relacionar para editar 
 
+	# filter_horizontal = ('favorite_songs',)
+	filter_vertical = ('favorite_songs',)
 
 
 
