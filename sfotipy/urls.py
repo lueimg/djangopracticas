@@ -4,6 +4,8 @@ from django.contrib import admin
 admin.autodiscover()
 from django.conf import settings
 
+from artists.views import ArtistDetailView
+
 urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'sfotipy.views.home', name='home'),
@@ -13,6 +15,7 @@ urlpatterns = patterns('',
 	url(r'^tracks/(?P<title>[\w\-\W]+)', 'tracks.views.track_view', name='track_view'),
 	url(r'^signup/',"userprofiles.views.signup",name="signup"),
 	url(r'^signin/',"userprofiles.views.signin",name="signin"),
+	url(r'^artists/(?P<pk>[\d]+)', ArtistDetailView.as_view()),
 )
 
 urlpatterns += patterns('',
