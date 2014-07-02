@@ -42,6 +42,7 @@ INSTALLED_APPS = (
     'artists',
     "userprofiles",
     'mockups',
+    'django_extensions', # pip install django-extensions // ./manage.py shell_plus // Artist.objects.filter(id__gt=2).delete()
 )
 
 MIDDLEWARE_CLASSES = (
