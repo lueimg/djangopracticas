@@ -6,6 +6,7 @@ from .models import Track
 
 import json
 # Create your views here.
+# @login_required me falta la calse de decoradores
 def track_view(request, title):
 	# try:
 	# 	track = Track.objects.get(title=title)
