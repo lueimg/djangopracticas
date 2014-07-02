@@ -28,8 +28,16 @@ ALLOWED_HOSTS = []
 
 
 # Application definition
+from django.conf.global_settings import TEMPLATE_CONTEXT_PROCESSORS as TCP
+
+TEMPLATE_CONTEXT_PROCESSORS = TCP + (
+    "django.core.context_processors.request",
+)
+
+GRAPPELLI_ADMIN_TITLE = 'SFOTIPY'
 
 INSTALLED_APPS = (
+    'grappelli',  # pip install django-grappelli
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
