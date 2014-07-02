@@ -11,6 +11,8 @@ def track_view(request, title):
 	# 	track = Track.objects.get(title=title)
 	# except Track.DoesNotExist:
 	# 	raise Http404
+	# pip install ipdb
+	# import ipdb; ipdb.set_trace() # pip install ipdb // aparecera automaticamente en el shell del server  , para salir ctrl + D
 
 	track = get_object_or_404(Track , title=title)
 
