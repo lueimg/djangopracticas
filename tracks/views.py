@@ -37,3 +37,9 @@ def track_view_json(request, title):
 	json_data = json.dumps(data)
 
 	return HttpResponse(json_data, content_type="application/json")
+
+
+from rest_framework import viewsets
+
+class TrackViewSet(viewsets.ModelViewSet):
+	model = Track

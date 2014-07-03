@@ -19,3 +19,6 @@ class Artist(models.Model):
 	"""
 	def __unicode__(self):
 		return self.firt_name
+
+	def es_pharrel(self):
+		return self.id == 1
