@@ -53,6 +53,7 @@ INSTALLED_APPS = (
     'mockups',
     'django_extensions', # pip install django-extensions // ./manage.py shell_plus // Artist.objects.filter(id__gt=2).delete()
     'rest_framework',
+    'djcelery',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -106,5 +107,15 @@ MEDIA_URL = '/media/'
 # modifica la funcion authentication en general
 # AUTHENTICATION_BACKENDS = (
 #     'userprofiles.backends.EmailBackend',)
+
+import djcelery
+djcelery.setup_loader()
+
+BROKER_URL = 'redis://localhost:6379/0'
+
+
+
+
+
 
 
