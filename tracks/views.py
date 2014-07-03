@@ -5,6 +5,10 @@ from django.http import HttpResponse, Http404
 from .models import Track
 
 import json
+
+from artists.tasks import demorada
+
+
 # Create your views here.
 # @login_required me falta la calse de decoradores
 def track_view(request, title):
@@ -14,7 +18,7 @@ def track_view(request, title):
 	# 	raise Http404
 	# pip install ipdb
 	# import ipdb; ipdb.set_trace() # pip install ipdb // aparecera automaticamente en el shell del server  , para salir ctrl + D
-
+	demorada.apply_async(countdown=5)
 	track = get_object_or_404(Track , title=title)
 
 	# return HttpResponse('Ok')
